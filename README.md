@@ -27,7 +27,7 @@ svgpng
 <!-- Description Start -->
 <a name="description"></a>
 
-Node.js module to convert SVG image into PNG image.
+Convert SVG image into PNG.
 
 <!-- Description End -->
 

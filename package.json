@@ -1,7 +1,7 @@
 {
   "name": "svgpng",
-  "version": "1.0.1",
-  "description": "Node.js module to convert SVG image into PNG image.",
+  "version": "1.0.2",
+  "description": "Convert SVG image into PNG.",
   "main": "lib",
   "scripts": {
     "build": "./ci/build.js",
