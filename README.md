@@ -129,6 +129,6 @@ This software is released under the [MIT License](https://github.com/okunishinis
 Links
 ------
 
-+ [glob](https://www.npmjs.com/package/glob)
++ [PhantomJS](http://phantomjs.org/)
 
 <!-- Links End -->
