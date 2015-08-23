@@ -39,12 +39,23 @@ Node.js module to convert SVG image into PNG image.
 Installation
 -----
 
+### Installing PhantomJS
+
+Download [PhantomJS](http://phantomjs.org/) and set path to it.
+
+If you are using osX, `brew install phantomjs` would do this.
+
+
+### Installing svgpng via npm
+
 ```bash
 npm install svgpng --save
 ```
 Usage
 ----
 
+
+### Converting a Single SVG File into PNG
 
 ```javascript
 #!/usr/bin/env/node
@@ -64,6 +75,12 @@ svgpng(
         /*...*/
     }
 );
+
+```
+
+### Converting Multiple SVG Files into PNG
+
+```javascript
 
 ```
 

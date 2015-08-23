@@ -16,6 +16,6 @@ process.chdir(basedir);
 
 apeTasking.runTasks('test', [
     function (callback) {
-        apeTesting.runNodeunit('*_test.js', callback);
+        apeTesting.runNodeunit('test/*_test.js', callback);
     }
 ], true);
