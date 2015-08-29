@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+/**
+ * CLI script for svgpng.js
+ */
+
+"use strict";
+
+var program = require('commander'),
+    pkg = require('../package'),
+    svgpng = require('../lib/svgpng.js');
+
+program
+    .version(pkg['version'])
+    .usage('[options] <src> <dest>')
+    .option('-w, --width <width>', "Image width")
+    .option('-h, --height <height>', "Image height")
+    .parse(process.argv);
+
+var args = program.args;
+svgpng(args[0], args[1], {
+    size: {
+        width: Number(args.width || args.height || 256),
+        height: Number(args.height || args.width || 256)
+    }
+}, function (err) {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    } else {
+        process.exit(0);
+    }
+});

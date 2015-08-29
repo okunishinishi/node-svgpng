@@ -109,6 +109,16 @@ svgpng.byConf([
 ```
 
 
+CLI
+------
+
+```bash
+$ npm install svgpng -g
+```
+
+```bash
+$ svgpng src/foo.svg dest/foo.png -w 256 -h 360
+```
 
 <!-- Sections Start -->
 

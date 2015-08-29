@@ -1,7 +1,10 @@
 {
   "name": "svgpng",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "description": "Convert SVG image into PNG.",
+  "bin": {
+    "svgpng": "bin/svgpng"
+  },
   "main": "lib",
   "scripts": {
     "build": "./ci/build.js",
@@ -30,6 +33,7 @@
   "dependencies": {
     "argx": "^1.1.6",
     "async": "^1.4.2",
+    "commander": "^2.8.1",
     "execcli": "^2.1.1",
     "hasbin": "^1.1.0"
   },
