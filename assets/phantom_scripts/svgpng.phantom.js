@@ -14,7 +14,8 @@ var conf = require(system.args[1]);
 async.eachSeries([].concat(conf), function (conf, callback) {
     var src = conf.src,
         dest = conf.dest,
-        size = conf.size || {};
+        size = conf.size || {},
+        silent = !!conf.silent;
 
     page.viewportSize = {
         width: size.width || 480,
@@ -27,11 +28,14 @@ async.eachSeries([].concat(conf), function (conf, callback) {
             phantom.exit();
         }
         page.render(dest);
-        console.log('File generated: ', dest);
+        if (!silent) {
+
+            console.log('File generated: ', dest);
+        }
         callback(null);
     });
 }, function (err) {
-    if (err) {
+    if (err && !silent) {
         console.error(err);
     }
     var exitCode = err ? 1 : 0;
