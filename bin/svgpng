@@ -20,8 +20,8 @@ program
 var args = program.args;
 svgpng(args[0], args[1], {
     size: {
-        width: Number(args.width || args.height || 256),
-        height: Number(args.height || args.width || 256)
+        width: Number(program.width || program.height || 256),
+        height: Number(program.height || program.width || 256)
     }
 }, function (err) {
     if (err) {

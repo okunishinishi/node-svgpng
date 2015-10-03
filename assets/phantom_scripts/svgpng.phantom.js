@@ -29,7 +29,6 @@ async.eachSeries([].concat(conf), function (conf, callback) {
         }
         page.render(dest);
         if (!silent) {
-
             console.log('File generated: ', dest);
         }
         callback(null);
