@@ -16,7 +16,7 @@ exports.tearDown = function (done) {
 exports['Svgpng by conf'] = function (test) {
     svgpngByConf([
         {
-            src: __dirname + "/../docs/mockups/mockup-svg.svg",
+            src: __dirname + "/../doc/mocks/mockup-svg.svg",
             dest: __dirname + '/../tmp/test-png.png',
             size: {
                 width: 200,

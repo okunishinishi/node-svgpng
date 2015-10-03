@@ -20,6 +20,7 @@ svgpng
 [bd_gemnasium_shield_url]: https://gemnasium.com/okunishinishi/node-svgpng.svg
 [bd_npm_url]: http://www.npmjs.org/package/svgpng
 [bd_npm_shield_url]: http://img.shields.io/npm/v/svgpng.svg?style=flat
+[bd_bower_badge_url]: https://img.shields.io/bower/v/svgpng.svg?style=flat
 
 <!-- Badge End -->
 
@@ -33,9 +34,13 @@ Convert SVG image into PNG.
 
 
 
+
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/readme/01.Installation.md.hbs" Start -->
+
+<a name="section-doc-readme-01-installation-md"></a>
 Installation
 -----
 
@@ -51,6 +56,11 @@ If you are using osX, `brew install phantomjs` would do this.
 ```bash
 npm install svgpng --save
 ```
+<!-- Section from "doc/readme/01.Installation.md.hbs" End -->
+
+<!-- Section from "doc/readme/02.Usage.md.hbs" Start -->
+
+<a name="section-doc-readme-02-usage-md"></a>
 Usage
 ----
 
@@ -109,6 +119,11 @@ svgpng.byConf([
 ```
 
 
+<!-- Section from "doc/readme/02.Usage.md.hbs" End -->
+
+<!-- Section from "doc/readme/03.CLI.md.hbs" Start -->
+
+<a name="section-doc-readme-03-c-l-i-md"></a>
 CLI
 ------
 
@@ -119,6 +134,8 @@ $ npm install svgpng -g
 ```bash
 $ svgpng src/foo.svg dest/foo.png -w 256 -h 360
 ```
+<!-- Section from "doc/readme/03.CLI.md.hbs" End -->
+
 
 <!-- Sections Start -->
 
