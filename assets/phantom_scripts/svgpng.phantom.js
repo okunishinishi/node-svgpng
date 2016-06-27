@@ -1,20 +1,21 @@
 /**
  * @file Phantom js script for svgpng.
  */
-console.log('!!!!!!!')
-"use strict"
 
 var page = require('webpage').create()
 var system = require('system')
 
-var conf = [].concat(require(system.args[ 1 ]))
+var confPath = system.args[ 1 ]
+if (!confPath) {
+  throw new Error('confPath is required.')
+}
+var conf = [].concat(require(confPath))
 
 function convert (src, dest, size, callback) {
   page.viewportSize = {
     width: size.width || 480,
     height: size.height || 800
   }
-
   page.open(src, function (status) {
     if (status !== 'success') {
       callback(new Error('FAIL to load :' + src))
@@ -28,7 +29,7 @@ function convert (src, dest, size, callback) {
 }
 
 function tick (callback) {
-  let converting = conf.shift()
+  var converting = conf.shift()
   if (converting === 0) {
     callback()
     return
@@ -36,9 +37,9 @@ function tick (callback) {
   convert(converting.src, converting.dest, converting.size || {}, function (err) {
     if (err) {
       callback(err)
-      return
+    } else {
+      callback(null)
     }
-    tick()
   })
 }
 
