@@ -4,30 +4,28 @@
  * CLI script for svgpng.js
  */
 
-"use strict";
+'use strict'
 
-var program = require('commander'),
-    pkg = require('../package'),
-    svgpng = require('../lib/svgpng.js');
+const program = require('commander')
+const pkg = require('../package')
+const svgpng = require('../lib/svgpng.js')
 
 program
-    .version(pkg['version'])
-    .usage('[options] <src> <dest>')
-    .option('-w, --width <width>', "Image width")
-    .option('-h, --height <height>', "Image height")
-    .parse(process.argv);
+  .version(pkg[ 'version' ])
+  .usage('[options] <src> <dest>')
+  .option('-w, --width <width>', 'Image width')
+  .option('-h, --height <height>', 'Image height')
+  .parse(process.argv)
 
-var args = program.args;
-svgpng(args[0], args[1], {
-    size: {
-        width: Number(program.width || program.height || 256),
-        height: Number(program.height || program.width || 256)
-    }
-}, function (err) {
-    if (err) {
-        console.error(err);
-        process.exit(1);
-    } else {
-        process.exit(0);
-    }
-});
+let [src, dest] = program.args
+svgpng(src, dest, {
+  size: {
+    width: Number(program.width || program.height || 256),
+    height: Number(program.height || program.width || 256)
+  }
+}).then(() => {
+  process.exit(0)
+}).catch((err) => {
+  console.error(err)
+  process.exit(1)
+})

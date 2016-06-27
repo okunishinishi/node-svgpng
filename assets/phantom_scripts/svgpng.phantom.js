@@ -1,42 +1,54 @@
 /**
  * @file Phantom js script for svgpng.
  */
+console.log('!!!!!!!')
+"use strict"
 
-"use strict";
+var page = require('webpage').create()
+var system = require('system')
 
+var conf = [].concat(require(system.args[ 1 ]))
 
-var page = require('webpage').create(),
-    system = require('system');
+function convert (src, dest, size, callback) {
+  page.viewportSize = {
+    width: size.width || 480,
+    height: size.height || 800
+  }
 
-var async = require('async');
-var conf = require(system.args[1]);
-
-async.eachSeries([].concat(conf), function (conf, callback) {
-    var src = conf.src,
-        dest = conf.dest,
-        size = conf.size || {},
-        silent = !!conf.silent;
-
-    page.viewportSize = {
-        width: size.width || 480,
-        height: size.height || 800
-    };
-
-    page.open(src, function (status) {
-        if (status !== 'success') {
-            callback(new Error('FAIL to load :' + src));
-            phantom.exit();
-        }
-        page.render(dest);
-        if (!silent) {
-            console.log('File generated: ', dest);
-        }
-        callback(null);
-    });
-}, function (err) {
-    if (err && !silent) {
-        console.error(err);
+  page.open(src, function (status) {
+    if (status !== 'success') {
+      callback(new Error('FAIL to load :' + src))
+      phantom.exit()
+      return
     }
-    var exitCode = err ? 1 : 0;
-    phantom.exit(exitCode);
-});
+    page.render(dest)
+    console.log('File generated: ', dest)
+    callback(null)
+  })
+}
+
+function tick (callback) {
+  let converting = conf.shift()
+  if (converting === 0) {
+    callback()
+    return
+  }
+  convert(converting.src, converting.dest, converting.size || {}, function (err) {
+    if (err) {
+      callback(err)
+      return
+    }
+    tick()
+  })
+}
+
+console.log('Start converting...')
+tick(function (err) {
+  var exitCode = err ? 1 : 0
+  if (err) {
+    console.error(err)
+  } else {
+    console.log('...converting done!')
+  }
+  phantom.exit(exitCode)
+})

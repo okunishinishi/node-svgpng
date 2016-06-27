@@ -1,24 +1,18 @@
 /**
  * Test case for svgpng.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+'use strict'
 
-var svgpng = require('../lib/svgpng.js');
+const svgpng = require('../lib/svgpng.js')
+const co = require('co')
+const assert = require('assert')
 
-exports.setUp = function (done) {
-    done();
-};
+it('Svgpng', () => co(function * () {
+  let src = `${__dirname}/../doc/mocks/mockup-svg.svg`
+  let dest = `${__dirname}/../tmp/test-png.png`
+  yield svgpng(src, dest)
+}))
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Svgpng'] = function (test) {
-    var src = __dirname + "/../doc/mocks/mockup-svg.svg",
-        dest = __dirname + '/../tmp/test-png.png';
-    svgpng(src, dest, function (err) {
-        test.ifError(err);
-        test.done();
-    });
-};
+/* global it */
 

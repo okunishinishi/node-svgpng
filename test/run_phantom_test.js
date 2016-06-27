@@ -1,23 +1,16 @@
 /**
  * Test case for runPhantom.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+'use strict'
 
-var runPhantom = require('../lib/run_phantom.js');
+const runPhantom = require('../lib/run_phantom.js')
+const assert = require('assert')
+const co = require('co')
 
-exports.setUp = function (done) {
-    done();
-};
+it('Run phantom', () => co(function * () {
+  yield runPhantom('-v')
+}))
 
-exports.tearDown = function (done) {
-    done();
-};
-
-
-exports['Run phantom'] = function (test) {
-    runPhantom('-v', function (err) {
-        test.ifError(err);
-        test.done();
-    });
-};
+/* global it */
 

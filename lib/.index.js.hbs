@@ -4,11 +4,15 @@
  * @version {{pkg.version}}
  */
 
-"use strict";
+'use strict'
 
-var svgpng = require('./svgpng').bind(this),
-    svgpngByConf = require('./svgpng_by_conf');
+const svgpng = require('./svgpng')
+const svgpngByConf = require('./svgpng_by_conf')
 
-svgpng.byConf = svgpngByConf;
+let lib = svgpng.bind(this)
 
-module.exports = svgpng;
+Object.assign(lib, svgpng, {
+  byConf: svgpngByConf
+})
+
+module.exports = lib

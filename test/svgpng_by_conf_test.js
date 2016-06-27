@@ -1,29 +1,24 @@
 /**
  * Test case for svgpngByConf.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+'use strict'
 
-var svgpngByConf = require('../lib/svgpng_by_conf.js');
+const svgpngByConf = require('../lib/svgpng_by_conf.js')
+const assert = require('assert')
+const co = require('co')
 
-exports.setUp = function (done) {
-    done();
-};
+it('Svgpng by conf', () => co(function * () {
+  yield svgpngByConf([
+    {
+      src: `${__dirname}/../doc/mocks/mockup-svg.svg`,
+      dest: `${__dirname}/../tmp/test-png.png`,
+      size: {
+        width: 200,
+        height: 200
+      }
+    }
+  ])
+}))
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Svgpng by conf'] = function (test) {
-    svgpngByConf([
-        {
-            src: __dirname + "/../doc/mocks/mockup-svg.svg",
-            dest: __dirname + '/../tmp/test-png.png',
-            size: {
-                width: 200,
-                height: 200
-            }
-        }
-    ]);
-    test.done();
-};
-
+/* global it */

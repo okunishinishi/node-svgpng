@@ -1,18 +1,19 @@
 /**
  * Test for svgpng bin.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 
-"use strict";
+'use strict'
 
+const bin = require.resolve('../bin/svgpng')
+const co = require('co')
+const assert = require('assert')
+const execcli = require('execcli')
 
-var bin = require.resolve('../bin/svgpng'),
-    execcli = require('execcli');
+it('Svgpng', () => co(function * () {
+  let src = __dirname + '/../doc/mocks/mockup-svg.svg'
+  let dest = __dirname + '/../tmp/test-by-bin-png.png'
+  yield execcli(bin, [ src, dest, { width: 20, height: 40 } ])
+}))
 
-exports['Svgpng'] = function (test) {
-    var src = __dirname + "/../doc/mocks/mockup-svg.svg",
-        dest = __dirname + '/../tmp/test-by-bin-png.png';
-    execcli(bin, [src, dest, {width: 20, height: 40}], function (err) {
-        test.done();
-    });
-};
+/* global it */
