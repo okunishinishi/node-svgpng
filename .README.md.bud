@@ -10,7 +10,7 @@ const pkg = require('./package.json')
 module.exports = apeTmpl.readmeMdBud({
   pkg: pkg,
   repo: pkg.repository,
-  sections: 'doc/readme/*.md.hbs',
+  sections: 'doc/guides/*.md.hbs',
   badges: {
     travis: true,
     npm: true

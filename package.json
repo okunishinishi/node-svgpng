@@ -1,6 +1,6 @@
 {
   "name": "svgpng",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Convert SVG image into PNG.",
   "bin": {
     "svgpng": "bin/svgpng"

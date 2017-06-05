@@ -43,19 +43,12 @@ Convert SVG image into PNG.
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "doc/readme/01.Installation.md.hbs" Start -->
+<!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
-<a name="section-doc-readme-01-installation-md"></a>
+<a name="section-doc-guides-01-installation-md"></a>
 
 Installation
 -----
-
-### Installing PhantomJS
-
-Download [PhantomJS](http://phantomjs.org/) and set path to it.
-
-If you are using osX, `brew install phantomjs` would do this.
-
 
 ### Installing svgpng via npm
 
@@ -63,11 +56,11 @@ If you are using osX, `brew install phantomjs` would do this.
 npm install svgpng --save
 ```
 
-<!-- Section from "doc/readme/01.Installation.md.hbs" End -->
+<!-- Section from "doc/guides/01.Installation.md.hbs" End -->
 
-<!-- Section from "doc/readme/02.Usage.md.hbs" Start -->
+<!-- Section from "doc/guides/02.Usage.md.hbs" Start -->
 
-<a name="section-doc-readme-02-usage-md"></a>
+<a name="section-doc-guides-02-usage-md"></a>
 
 Usage
 ----
@@ -128,11 +121,11 @@ const svgpng = require('svgpng')
 
 
 
-<!-- Section from "doc/readme/02.Usage.md.hbs" End -->
+<!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
-<!-- Section from "doc/readme/03.CLI.md.hbs" Start -->
+<!-- Section from "doc/guides/03.CLI.md.hbs" Start -->
 
-<a name="section-doc-readme-03-c-l-i-md"></a>
+<a name="section-doc-guides-03-c-l-i-md"></a>
 
 CLI
 ------
@@ -145,7 +138,8 @@ $ npm install svgpng -g
 $ svgpng src/foo.svg dest/foo.png -w 256 -h 360
 ```
 
-<!-- Section from "doc/readme/03.CLI.md.hbs" End -->
+
+<!-- Section from "doc/guides/03.CLI.md.hbs" End -->
 
 
 <!-- Sections Start -->
