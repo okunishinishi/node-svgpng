@@ -33,11 +33,9 @@
     "phantomjs-prebuilt": "^2.1.14"
   },
   "devDependencies": {
-    "ape-covering": "^3.0.3",
+    "amocha": "^2.0.0",
     "ape-releasing": "^4.0.1",
-    "ape-reporting": "^3.0.1",
     "ape-tasking": "^4.0.2",
-    "ape-testing": "^4.0.0",
     "ape-tmpl": "^5.0.6",
     "ape-updating": "^4.0.1",
     "coz": "^6.0.3",
