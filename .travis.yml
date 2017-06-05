@@ -1,20 +1,6 @@
 language: node_js
 node_js:
-- '6'
-cache:
-  directories:
-    - "travis_phantomjs"
-
-before_install:
-  - "phantomjs --version"
-  - "export PATH=$PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
-  - "phantomjs --version"
-  - "if [ $(phantomjs --version) != '2.1.1' ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
-  - "if [ $(phantomjs --version) != '2.1.1' ]; then wget https://assets.membergetmember.co/software/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2; fi"
-  - "if [ $(phantomjs --version) != '2.1.1' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
-  - "phantomjs --version"
-
-  - npm install mocha istanbul -g
+- '8'
 install:
 - npm install
 before_script:
@@ -22,8 +8,6 @@ before_script:
 script:
 - ./ci/build.js
 - ./ci/test.js
-- ./ci/cover.js
-- ./ci/report.js
 env:
   global:
     secure: lgnyrTc/6K8PWWuGLruEm9ynbs+t62qL/9UarDPOugBpxI/Gy1TBTJSN7eTDKNDvPoL26qOwiEAqIDEKuHJEWJj73XJ8Gr/as0Ww3lCBk5W2AAwMDNQ1XQptnaNKrohQv3TbaLZiLdpdGChGu/6wjhvVyBg02o4hn53ubuXDaK9u1Ukvthl/mB0/yGqZuxNyJZBmXWUidsiqm0sJpVU3M7kqmik7z5hHIVTJR/XnJep6DzWbTHv2STGW8eGulL0dAIes9YP+5OkULX2qrnbTrJXRXBjI3M88+kRzBTK3uvAbBYdzIQVxLCfEtlqDTUHN9OtA2z0xf1bqrbQfsuCtE74bjyi7jsMnq/Fmb7H+8s2fma9SOPiXkxv0yHyAFNOtHiCw3xWxKuiVsTcH+YrDmLckecY/NZRRoH4jEKeNSdKH+qD6iljXAbynudP9nnXFuWwNJOey2HWLgHSDr9msTTt2+n7IPnH1HtLtOFMRJSuGA3LHDMSTXc6wylxWq4zsybEXXnrK+LgfIrTMUfc078s21RvEa+hIgom+ATgy3FtpWDyz5M/8qVPCaddQs4LrzabMKfCBtfYH78kFcdhoZm+QvNE47z3w2tqogKIaojbnKsfDKrWX4J8TpKhMO+9XHYnDYe4wRJK7gKGNtKZOshLKvj2z0RUEIn4HD8DZoqE=
