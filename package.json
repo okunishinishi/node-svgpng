@@ -1,6 +1,6 @@
 {
   "name": "svgpng",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Convert SVG image into PNG.",
   "bin": {
     "svgpng": "bin/svgpng"
@@ -26,11 +26,12 @@
   },
   "homepage": "https://github.com/okunishinishi/node-svgpng#readme",
   "dependencies": {
+    "amkdirp": "^2.0.0",
     "argx": "^3.0.2",
-    "co": "^4.6.0",
+    "asfs": "^2.0.3",
     "commander": "^2.8.1",
     "execcli": "^5.0.0",
-    "phantomjs-prebuilt": "^2.1.14"
+    "sharp": "^0.21.0"
   },
   "devDependencies": {
     "amocha": "^2.0.0",
@@ -42,7 +43,7 @@
     "injectmock": "^2.0.0"
   },
   "engines": {
-    "node": ">=7.6",
-    "npm": ">=4"
+    "node": ">=10",
+    "npm": ">=5"
   }
 }

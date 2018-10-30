@@ -6,10 +6,9 @@
 
 const svgpngByConf = require('../lib/svgpng_by_conf.js')
 const assert = require('assert')
-const co = require('co')
 
-it('Svgpng by conf', () => co(function * () {
-  yield svgpngByConf([
+it('Svgpng by conf', async () => {
+  await svgpngByConf([
     {
       src: `${__dirname}/../doc/mocks/mockup-svg.svg`,
       dest: `${__dirname}/../tmp/test-png.png`,
@@ -19,6 +18,6 @@ it('Svgpng by conf', () => co(function * () {
       }
     }
   ])
-}))
+})
 
 /* global it */
