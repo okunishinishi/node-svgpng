@@ -1,6 +1,6 @@
 {
   "name": "svgpng",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Convert SVG image into PNG.",
   "bin": {
     "svgpng": "bin/svgpng"
@@ -27,19 +27,19 @@
   "homepage": "https://github.com/okunishinishi/node-svgpng#readme",
   "dependencies": {
     "amkdirp": "^2.0.0",
-    "argx": "^3.0.2",
-    "asfs": "^2.0.3",
-    "commander": "^2.8.1",
-    "execcli": "^5.0.0",
-    "sharp": "^0.21.0"
+    "argx": "^4.0.0",
+    "asfs": "^2.2.3",
+    "commander": "^2.19.0",
+    "execcli": "^5.0.6",
+    "sharp": "^0.22.0"
   },
   "devDependencies": {
-    "amocha": "^2.0.0",
-    "ape-releasing": "^4.0.1",
-    "ape-tasking": "^4.0.2",
-    "ape-tmpl": "^5.0.6",
-    "ape-updating": "^4.0.1",
-    "coz": "^6.0.3",
+    "amocha": "^6.0.0",
+    "ape-releasing": "^5.0.7",
+    "ape-tasking": "^4.0.12",
+    "ape-tmpl": "^6.0.14",
+    "ape-updating": "^5.0.3",
+    "coz": "^7.0.19",
     "injectmock": "^2.0.0"
   },
   "engines": {
