@@ -31,7 +31,7 @@
     "asfs": "^2.3.0",
     "commander": "^2.20.3",
     "execcli": "^5.0.6",
-    "sharp": "^0.25.3"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "amocha": "^7.0.2",
